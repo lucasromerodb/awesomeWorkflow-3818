@@ -1,0 +1,253 @@
+<!doctype html>
+<html dir="ltr" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Comandos</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/front.css">
+	<link rel="stylesheet" href="css/font-awesome.css">
+</head>
+<body>
+	<div class="nav">
+		<div class="wrapper-nav">
+			<!-- <h1>Linux Commands</h1> -->
+			<a href="#" class="go-up">↑</a>
+			<a href="#git" class="menu">Git</a>
+			<a href="#linux" class="menu">Linux</a>
+			<a href="#vim" class="menu">Vim</a>
+			<a href="colores.html" class="menu"><strong>Colores!</strong></a>
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<a name="git"><h2>Git</h2></a><!-- NOMBRE -->
+		<!-- CODIGO -->
+		<div>
+			<h3>Git Clone and Push/Pull</h3>
+			<div class="codes">
+				<p>git clone URL <span>#Clona el ultimo commit a tu carpeta</span></p>
+				<p>git fletch URL &laquo;commit-number&raquo; <span>#Clona un commit determinado a tu carpeta</span></p>
+				<p>git status <span>#Estado de tus archivos antes de subirlos al repositorio</span></p>
+				<p>git add -A <span>#Añade los archivos que modificaste</span></p>
+				<p>git status <span>#Estado de tus archivos antes de subirlos al repositorio</span></p>
+				<p>git commit -m "&laquo;commit&raquo;" <span>#Añade el comentario para el commit</span></p>
+				<p>git push origin master <span>#Sube tus modificaciones al repositorio</span></p>
+				<p>git pull origin master <span>#Baja el repositorio a tu carpeta y lo sobreescribe si ya existe</span></p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Git Branches</h3>
+			<div class="codes">
+				<p>git branch <span>#Muestra en que branch del repositorio estas</span></p>
+				<p>git branch &laquo;branch-name&raquo; <span>#Crea un nuevo branch</span></p>
+				<p>git checkout &laquo;branch-name&raquo; <span>#Selecciona el branch con el cual vas a trabajar</span></p>
+				<p>git branch -d &laquo;branch-name&raquo; <span>#Borra el branch en modo seguro (Previene borrar sin merge)</span></p>
+				<p>git branch -D &laquo;branch-name&raquo; <span>#Fuerza el borrado aunque no haya merge</span></p>
+				<p>git branch -m &laquo;branch-name&raquo; <span>#Renombrar el branch</span></p>
+				<p>git merge &laquo;branch-name&raquo; <span>#Merge de un branch especifico en el branch actual (Git Merge automático)</span></p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Encontrar archivos llamados .git*</h3>
+			<div class="codes">
+				<p>find . -name ".git*"</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Borrar archivos llamados .git*</h3>
+			<div class="codes">
+				<p>find . -name ".git*" | xargs rm</p>
+			</div>
+		</div>
+		<a name="linux"><h2>Linux</h2></a><!-- NOMBRE -->
+		<!-- CODIGO -->
+		<div>
+			<h3>Sesión</h3>
+			<div class="codes">
+				<p>gnome-session-quit <span>#Cierra la sesión (logOut)</span></p>
+				<p>sudo reboot <span>#reiniciar sistema</span></p>
+				<p>sudo update-grub <span>#recarga el grub</span></p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Permissions</h3>
+			<div class="codes">
+				<p>find . -type d -exec chmod 755 {} \; <span>#permisos 'rw' p/ el usuario. No para el grupo</span></p>
+				<p>find . -type d -exec chmod 775 {} \;  <span>#permisos 'rw' p/ usuario y grupo</span></p>
+				<p>find . -type f -exec chmod 644 {} \; <span>#permisos 'rw' p/ el usuario y 'r' p/ grupo</span></p>
+				<p>chown -R &laquo;user&raquo; /folder/subfolder <span>#Asigna como propietario de un directorio a un usuario especifico</span></p>
+				<p>ls -l /folder <span>#muestra permisos y propietarios de ese directorio</span></p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Apache Web Server</h3>
+			<div class="codes">
+				<p>sudo systemctl restart httpd <span>#reinicia apache</span></p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Filter out unique requests for a given day, in this case September 5th 2010</h3>
+			<div class="codes">
+				<p>cat access.log |  grep "\[01/Aug/2014" |awk '{print $1}' | sort | uniq | wc -l</p>
+				<p>cat access.log |  grep "\[31/Jul/2014" |awk '{print $1}' | sort | uniq | wc -l</p>
+				<p>cat access.log |  grep "\[30/Jul/2014" |awk '{print $1}' | sort | uniq | wc -l</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Number of hits</h3>
+			<div class="codes">
+				<p>cat access.log | wc -l</p>
+			</div>
+		</div>
+		<a name="vim"><h2>Vim</h2></a><!-- NOMBRE -->
+		<!-- CODIGO -->
+		<div>
+			<h3>Getting a list of unique referrers</h3>
+			<div class="codes">
+				<p>cat access.log | awk '{print $11};' | awk -F / '{print $3}' | sort | uniq</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Came up with this chain of commands that I though could be useful to others</h3>
+			<div class="codes">
+				<p>cat access.log |awk '{print $1}' | sort | uniq | wc -l</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Lines in file</h3>
+			<div class="codes">
+				<p>wc -l access.log</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Nuevo usuario y base de datos</h3>
+			<div class="codes">
+				<p>CREATE DATABASE sql_database;</p>
+				<p>CREATE USER 'sql_user'@'localhost' IDENTIFIED BY 'passwordaexample';</p>
+				<p>GRANT ALL PRIVILEGES ON `sql_database` . * TO 'sql_user'@'localhost' WITH GRANT OPTION ;</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Seek and destry</h3>
+			<div class="codes">
+				<p>grep -RHi "Cron Daemon" * | cut -f 1</p>
+				<p>grep -RHi "Cron Daemon" * | cut -d":" -f 1</p>
+				<p>grep -RHi "Cron Daemon" * | cut -d":" -f 1 | xargs ls // list</p>
+				<p>grep -RHi "Cron Daemon" * | cut -d":" -f 1 | xargs rm // delete</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Secure copy</h3>
+			<div class="codes">
+				<p>scp /home/user/Desktop/favicon.ico user@example.com.ar:/home/user</p>
+				<p>scp /home/nicolas/www/3818-017-MCA_System_flux/trunk/app dph3818@3818.com.ar:/flux/3818017/app</p>
+				<p>scp -P 2222 Save.php dph3818@3818.com.ar:~/flux/3818017/app/models</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Tar XZ</h3>
+			<div class="codes">
+				<p>tar cpf foo-bar.tar foo/ bar/</p>
+				<p>xz foo-bar.tar</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Después de check out</h3>
+			<div class="codes">
+				<p>chmod -R 775 *</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>To Tar</h3>
+			<div class="codes">
+				<p>tar czfp tarfilename.tgz foldername</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>UnTar</h3>
+			<div class="codes">
+				<p>tar xvzf tarfilename.tar.gz</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Ver quienes estan conectados y cerrar la 'ssh session'</h3>
+			<div class="codes">
+				<p>ps aux | grep ssh</p>
+				<p>kill -9</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Contar archivos</h3>
+			<div class="codes">
+				<p>find . -type f | wc -l</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Espacio ocupado por mi carpeta home</h3>
+			<div class="codes">
+				<p>du -h --max-depth=1 /home/user</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Bucar class="icon- y reemplazar con class="fa-</h3>
+			<div class="codes">
+				<p>find /path -type f -exec sed -i 's/class=\"icon-*\"/class=\"fa-*\"/g' {} \;</p>
+				<p>grep -rl matchstring somedir/ | xargs sed -i 's/string1/string2/g'</p>
+				<p>grep -rl 'windows' ./ | xargs sed -i 's/windows/linux/g'</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Últimas lines log</h3>
+			<div class="codes">
+				<p>tail -f messages</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Ver los procesos</h3>
+			<div class="codes">
+				<p>ps aux</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Tamaño que ocupa el directorio</h3>
+			<div class="codes">
+				<p>du -h --max-depth=1 /home/scmserver/</p>
+			</div>
+		</div>
+		<!-- CODIGO -->
+		<div>
+			<h3>Rsync con permisos y barra de progrso</h3>
+			<div class="codes">
+				<p>rsync -vaz --progress --rsh='ssh -p2222' /var/www/FIT-003-E-commerce/trunk/* dph3818@3818.com.ar:~/ecommerce/fit003</p>
+			</div>
+		</div>
+		<div class="credits">
+			<a href="#"><img alt="" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAN1wAADdcBQiibeAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAN1SURBVGiB5Zo9TxRRFIafM7sGrChoDK0agU5tRCuNLCLBkGhIjHZ+0K0JFutPkEIStzCSqIUWCoUiCSEaGytsZG2EAu10Q0OMhR8xgWNxZpDZHdjd2Yuzq2+yxczOnPs+mbl35pwzoqo4kWS7gQHw9oJ2AMGvHVgFivaTIqx/BGbR/KKToWNDiAhke0CGQIeA/TGiLINMg05Dfp6YZuJBSPYkMAZyKM6g0dIFIIfmX9VspyYIyR4EuQlkah2oBr0EvYHmC1XbqgpChlOwZwxkFJA6DFYrBR2HlRw6tVbRXkUIGWmD3Y9B+105rF4yBz/OoxNftz1qWwgZ3QdrM0CXY3e1aAlSZ9DxD1sdsDWEAbzBlsiktQqpI1uBeJGnyEibfwUaAQCgHdZmzFe5yiFkOGVzINFbKEpdsPux+Qsr4krsGUtmElcj7Td/YYXnhD0H3vJ3ltG4UtDDm58jJVdCbtLYAADi+9zQHwh7lXD7JM50wt1h6Ot0GhbI+H6BAEJEgLJ7rS71d8PMFRg5Bs+vwOlup+GBMd93cCWyPU5f5k51wbNL0JK27ZY0PL1kYM4kh8z3BoQMOYvd1xkGCNSStv2nXK7c5tuHUDcQmU6Yvgytu2BtHb58t/1fvtt2AJJxNUfUh7CMLE5CE1bvAXi+CeDiI3i/Yv8trsCFh7a/dZcd13ug7iGB/Ui22wMGXERj9HgY4MlC+P/JQhjk+gknwwIDaT8nrj/UuQe2Ct2bLwcINOk/n64ehbP36x8TAG9v2k/q69e3X9B7ByrlJ5MFmHpX+biqpR0eVpFwFK9KY84AAHAMkYw6PBonZ4irdg8rbDWzVj2sMtfMKv4rENLkEFL0/OJuE2v9owfMJm2jTs16fnl9OWknMbWM5heDfGI6WS9xZb6DfKJJIXQzRH7e7w80kXTBfAcQVnzKOR+n8Alef4DCZ+ehgVzQWSopnl17wc42UFzpJXq7L9goKZ7pDZxkSDsq9X1uKAyh+YJ1aBpZOl7aCosoKK/krEPTiJI581eyN7LJIiNt0DpPY5X3l+BnT1TrK7rJohNfIXWGxsk1Vq3lFd27i4YArLWUOgIs7ZSzKrW0XasLtoMAH+RnT3JzRObsFtoaACpBgH9rFQdBb/H3ll+18YqDldq/8F99UVB2VjN/2xE6s9m/somMlNz3Tr8BdBtVsYGQS8wAAAAASUVORK5CYII=" /></a>
+		</div>
+	</div>
+</body>
+</html>
