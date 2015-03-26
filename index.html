@@ -54,16 +54,19 @@
 		</div>
 		<!-- CODIGO -->
 		<div>
-			<h3>Encontrar archivos llamados .git*</h3>
+			<h3>Encontrar o Borrar archivos llamados *.git</h3>
 			<div class="codes">
-				<p>find . -name ".git*"</p>
+				<p>find . -name ".git*" <span>#Encontrar archivos llamados *.git</span></p>
+				<p>find . -name ".git*" | xargs rm <span>#Borrar archivos llamados *.git</span></p>
 			</div>
 		</div>
 		<!-- CODIGO -->
 		<div>
-			<h3>Borrar archivos llamados .git*</h3>
+			<h3>Git Tags <a href="http://git-scm.com/book/es/v1/Fundamentos-de-Git-Creando-etiquetas">(Mas info &raquo;)</a></h3>
 			<div class="codes">
-				<p>find . -name ".git*" | xargs rm</p>
+				<p>git tag <span>#Muestra una lista de los tags que existen</span></p>
+				<p>git tag -a &laquo;v1.4&raquo; -m "&laquo;nota del tag&raquo;" <span>#Primero especificamos una versión y luego escribimos una nota</span></p>
+				<p>git show &laquo;v1.4&raquo; <span>#Muestra un detalle del tag</span></p>
 			</div>
 		</div>
 		<a name="linux"><h2>Linux</h2></a><!-- NOMBRE -->
